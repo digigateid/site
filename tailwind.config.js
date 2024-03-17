@@ -7,6 +7,25 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'sm': '480px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1400px',
+      },
+      fontFamily: {
+        sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+        emoji: ['Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+      },
+      colors: {
+        customGray: {
+          100: '#F3F4F6',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          400: '#f3f4f6'
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
