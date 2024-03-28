@@ -33,7 +33,7 @@ export default function Home() {
       return (
           <div className="mb-4">
               <button
-                  className="flex justify-between items-center text-left bg-white border border-black border-solid font-bold p-2 md:py-2 md:px-4 rounded-md text-sm md:text-base"
+                  className="flex justify-between items-center text-left bg-white border border-black border-solid font-bold p-2 md:py-2 md:px-4 rounded-md text-xs md:text-sm"
                   onClick={toggleCollapse}
               >
                   <span>{question}</span>
@@ -70,22 +70,44 @@ export default function Home() {
       return (
           <div>
               <FAQItem
-                  question="Apa saja produk yang tersedia?"
-                  answer="DigiGate menyediakan berbagai jenis perangkat jaringan, termasuk perangkat jaringan sumber terbuka, serta perangkat OLT dan ONU."
+                  question="Perangkat apa sih DigiGate Router Series?"
+                  answer="DigiGate Router Series adalah perangkat server yang dirancang khusus untuk networking berbasis open-source dengan arsitektur x86. Anda dapat menginstal sistem operasi yang mendukung arsitektur x86 pada perangkat ini."
               />
               <FAQItem
-                  question="Kenapa kita harus menggunakan produk DigiGate?"
-                  answer="Misi kami adalah memberdayakan individu dan bisnis dengan solusi jaringan yang handal dan ekonomis, memungkinkan mereka berkembang di lanskap digital yang dinamis saat ini."
+                  question="Saya ingin membeli, tetapi saya ragu perangkat yang saya beli tidak mampu mengatasi jaringan saya. Apa yang bisa saya lakukan?"
+                  answer="Jangan khawatir, kami menawarkan garansi refund selama 7 hari apabila perangkat yang disarankan oleh admin kami tidak mampu mengatasi kebutuhan jaringan Anda."
+              />
+              <FAQItem
+                  question="Apabila perangkat saya mengalami kerusakan, berapa lama garansi yang akan berlaku?"
+                  answer="Untuk kerusakan yang umum seperti bagian power supply, SFP Port, kipas, dan lain-lain, kami memiliki suku cadang yang tersedia untuk penggantian segera. Anda dapat mengajukan klaim garansi dalam waktu yang singkat."
+              />
+              <FAQItem
+                  question="Bisakah saya meminta instalasi OS dan konfigurasi pada perangkat yang akan saya beli?"
+                  answer="Tentu saja, Anda dapat berkonsultasi mengenai biaya konfigurasi dan kompatibilitas dengan kebutuhan layanan yang Anda inginkan."
+              />
+              <FAQItem
+                  question="Dimana saya bisa memesan DigiGate?"
+                  answer="Anda dapat memesan perangkat DigiGate melalui platform e-commerce kami atau menghubungi admin kami."
+              />
+              <FAQItem
+                  question="Berapa lama waktu pengiriman setelah saya melakukan pemesanan?"
+                  answer="Waktu pengiriman tergantung ketersediaan stock perangkat. Untuk informasi lebih lanjut mengenai estimasi waktu pengiriman, silakan hubungi tim penjualan kami."
+              />
+              <FAQItem
+                  question="Bagaimana cara menginstal sistem operasi pada perangkat ini?"
+                  answer="Anda dapat menginstal sistem operasi pada perangkat ini menggunakan media instalasi seperti USB drive atau DVD. Instruksi instalasi biasanya dapat ditemukan dalam panduan pengguna atau dokumentasi yang disertakan dari sistem operasi."
               />
           </div>
       );
   };
 
+  const whatsApp = 'https://wa.me/6281511207866?text=Hallo,%20Saya%20tertarik%20dengan%20product%20anda';
+
   return (
     <RootLayout>
       <>
         <div>
-          <Link href="#" className="fixed bottom-4 right-4 bg-sky-300 border border-sky-600 border-solid rounded-full p-2">
+          <Link href={`${whatsApp}`} target="_blank" className="fixed bottom-4 right-4 bg-sky-400 border border-sky-600 hover:bg-sky-200 border-solid rounded-full p-2 z-50yjhyu">
               <span className="absolute -top-0 -right-0 flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75 border border-sky-600 border-solid"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
