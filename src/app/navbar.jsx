@@ -19,13 +19,13 @@ const Navbar = () => {
                         <Image src="/Assets/icons/Logo-digigate.png" alt="Logo Digigate" width="120" height="40" />
                     </Link>
                 </div>
-                <div className={`items-center gap-6 text-sm text-gray-500 hidden lg:flex lg:px-4`}>
+                <div className={`items-center gap-6 text-sm text-gray-800 hidden lg:flex lg:px-4`}>
                     <ul className="flex">
-                        <li className="mr-6"><Link href="/" className="hover:text-gray-400">Home</Link></li>
-                        <li className="mr-6"><Link href="#about" className="hover:text-gray-400">About Us</Link></li>
-                        <li className="mr-6"><Link href="#product" className="hover:text-gray-400">Product</Link></li>
-                        <li className="mr-6"><Link href="#" className="hover:text-gray-400">Catalog</Link></li>
-                        <li className="mr-6"><Link href="#footer" className="hover:text-gray-400">Contact</Link></li>
+                        <li className="mr-6"><Link href="/" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Home</Link></li>
+                        <li className="mr-6"><Link href="#about" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">About Us</Link></li>
+                        <li className="mr-6"><Link href="#product" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Product</Link></li>
+                        <li className="mr-6"><Link href="#" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Catalog</Link></li>
+                        <li className="mr-6"><Link href="#footer" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Contact</Link></li>
                     </ul>
                 </div>
                 {/* Sidebar */}
@@ -52,7 +52,7 @@ const Navbar = () => {
                 )}
 
                 <div className="flex gap-4 justify-end items-center md:w-[160px] flex-1 ml-auto">
-                    <form className="relative items-center flex-1 -space-x-px rounded-md shadow-sm hidden sm:inline-flex max-w-[320px] w-[60%]">
+                    {/* <form className="relative items-center flex-1 -space-x-px rounded-md shadow-sm hidden sm:inline-flex max-w-[320px] w-[60%]">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="icon absolute z-10 opacity-50 pointer-events-none left-2" width="20" height="20"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
                         <input type="text" placeholder="Search Products..." className="z-0 inline-flex items-center w-full p-2 pl-10 text-sm text-gray-500 border border-gray-300 rounded-md shadow-inner outline-none bg-gray-50 shadow-gray-200"/>
                     </form>
@@ -64,6 +64,12 @@ const Navbar = () => {
                     </Link>
                     <Link href="#" className="hidden sm:block" title="user">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                    </Link> */}
+                    <Link href="#">
+                        <button className="bg-sky-400 text-white flex text-center justify-center items-center gap-2 py-2 px-4 rounded-full border border-sky-400 hover:bg-white hover:text-sky-400 hover:fill-sky-400">
+                            Catalog
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" className="fill-current" width="15" height="15"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+                        </button>
                     </Link>
                 </div>
             </div>
