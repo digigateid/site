@@ -22,7 +22,10 @@ const Footer = () => {
                         <Image src="/Assets/icons/Logo-digigate.png" alt="Logo Digigate" width={120} height={40} />
                     </Link>
                     <p className="mt-4 ml-1 text-sm text-gray-700 xl:max-w-md">
-                        PT. Gerbang Digital Indonesia, didirikan pada tahun 2023, adalah perusahaan yang berdedikasi untuk menyediakan solusi jaringan terkini dengan produk utama DigiGate. Bergabunglah dengan kami untuk pengalaman terhubung yang lebih baik, dan kuatkan jaringan Anda dengan DigiGate.
+                    Established in 2023, PT. Gerbang Digital Indonesia is a pioneering company committed to providing the latest networking solutions. 
+                    Our flagship product, DigiGate, encompasses various types of networking devices, including open-source networking devices, as well as OLT and ONU devices. 
+                    Choose DigiGate for unmatched quality, durability, and pricing in networking solutions. Join us as we pave the way towards a more connected and prosperous future. 
+                    Strengthen your network with DigiGate.
                     </p>
                 </div>
                 <div className="flex flex-wrap justify-start gap-8 lg:gap-20">

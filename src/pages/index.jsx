@@ -2,6 +2,11 @@ import Image from "next/image";
 import RootLayout from "@/app/layout";
 import { useState, useEffect } from 'react';
 import Link from "next/link";
+import Card from "@/app/components/card.js";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -101,13 +106,43 @@ export default function Home() {
       );
   };
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  };  
+
   const whatsApp = 'https://wa.me/6281511207866?text=Hallo,%20Saya%20tertarik%20dengan%20product%20anda';
 
   return (
     <RootLayout>
       <>
         <div>
-          <Link href={`${whatsApp}`} target="_blank" className="fixed bottom-4 right-4 bg-sky-400 border border-sky-600 hover:bg-sky-200 border-solid rounded-full p-2 z-50yjhyu">
+          <Link href={`${whatsApp}`} target="_blank" className="fixed bottom-4 right-4 bg-sky-400 border border-sky-600 hover:bg-sky-200 border-solid rounded-full p-2 z-50">
               <span className="absolute -top-0 -right-0 flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75 border border-sky-600 border-solid"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
@@ -143,11 +178,11 @@ export default function Home() {
         <section id="about" className=" bg-white py-20">
           <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center px-4">
             <div className="mb-4 lg:mb-0 lg:w-1/2 lg:pr-4">
-              {/* <h1 className="text-lg text-gray-400 font-bold md:text-xl">About Us</h1> */}
               <h1 className="text-xl font-bold md:text-3xl my-4"><span className="text-sky-600">DigiGate</span> is here to <br/>give you a solution</h1>
-              <p className="leading-6 md:leading-8 tracking-wide text-sm md:text-base">Didirikan pada tahun 2023, PT. Gerbang Digital Indonesia adalah perusahaan pionir yang berkomitmen untuk menyediakan solusi jaringan terkini. Produk utama kami, DigiGate, mencakup berbagai jenis perangkat jaringan, termasuk perangkat jaringan sumber terbuka, serta perangkat OLT dan ONU.
-              <span className="font-bold"> Pilih DigiGate untuk kualitas, daya tahan, dan harga yang tak tertandingi dalam solusi jaringan.</span> Bergabunglah dengan kami saat kami membuka jalan menuju masa depan yang lebih terhubung dan sejahtera.
-              Kuatkan jaringan Anda dengan DigiGate.
+              <p className="leading-6 md:leading-8 tracking-wide text-sm md:text-base">Established in 2023, PT. Gerbang Digital Indonesia is a pioneering company committed to providing the latest networking solutions. 
+              Our flagship product, DigiGate, encompasses various types of networking devices, including open-source networking devices, as well as OLT and ONU devices. 
+              <span className="font-bold"> Choose DigiGate for unmatched quality, durability, and pricing in networking solutions. </span> 
+              Join us as we pave the way towards a more connected and prosperous future. Strengthen your network with DigiGate.
               </p>
             </div>
             <div className="lg:w-1/2 flex justify-center">
@@ -158,122 +193,51 @@ export default function Home() {
 
         <section id="product" className="container mx-auto py-8 lg:pt-20 px-4">
           <h1 className="text-xl font-semibold md:text-2xl">Our Product</h1>
-          <div className="grid justify-center grid-cols-2 gap-4 mt-8 md:grid-cols-3 lg:grid-cols-5">
-            <div className="bg-white relative h-[300px] md:h-[360px] border border-white rounded-xl">
-              <div className="h-36 md:h-52">
-                <Image src="/assets/images/asus.png" alt="router asus" layout="responsive" width={100} height={100} className="object-cover w-full h-full rounded-xl" />
-              </div>
-              <div className="p-3">
-                <h1 className="font-semibold mb-1">ASUS RT-AX3000</h1>
-                <p className=" text-sm line-clamp-5">Router RT-AX3000 menawarkan kecepatan WiFi yang sangat tinggi. Total kecepatan jaringan yang ditawarkannya adalah sekitar 3000 Mbps — 574 Mbps pada pita 2,4 GHz dan 2402 Mbps pada pita 5 GHz.</p>
-              </div>
-            </div>
-            <div className="bg-white relative h-[300px] md:h-[360px] border border-white rounded-xl">
-              <div className="h-36 md:h-52">
-                <Image src="/assets/images/tplink.png" alt="router tp-link" layout="responsive" width={100} height={100} className="w-full h-full rounded-xl" />
-              </div>
-              <div className="p-3">
-                <h1 className="font-semibold mb-1">TP-Link TL-WR940N</h1>
-                <p className=" text-sm line-clamp-5">Router TL-WR940N yang dijual di angka Rp 300 ribuan menawarkan kecepatan jaringan hingga 450 Mbps, ideal untuk aplikasi sensitif gangguan seperti streaming video HD. Router ini dibekali dengan tiga buah antena yang berfungsi meningkatkan ketahanan dan stabilitas nirkabel.</p>
-              </div>
-            </div>
-            <div className="bg-white relative h-[300px] md:h-[360px] border border-white rounded-xl">
-              <div className="h-36 md:h-52">
-                <Image src="/assets/images/netgear.png" alt="router netgear" layout="responsive" width={100} height={100} className="w-full h-full rounded-xl" />
-              </div>
-              <div className="p-3">
-                <h1 className="font-semibold mb-1">Netgear RAX50 Nighthawk</h1>
-                <p className=" text-sm line-clamp-5">Netgear RAX50 Nighthawk yang dijual di angka Rp 3 jutaan ini juga dilengkapi dengan sejumlah fitur canggih. Salah satunya adalah dukungan keamanan siber Netgear Armor yang menjaga jaringan dan data pribadi Anda aman dari ancaman online.</p>
-              </div>
-            </div>
-            <div className="bg-white relative h-[300px] md:h-[360px] border border-white rounded-xl">
-              <div className="h-36 md:h-52">
-                <Image src="/assets/images/linksys.png" alt="router linksys" layout="responsive" width={100} height={100} className="w-full h-full rounded-xl" />
-              </div>
-              <div className="p-3">
-                <h1 className="font-semibold mb-1">Linksys E5600</h1>
-                <p className=" text-sm line-clamp-5">Dengan harga di angka Rp 700 ribuan, router WiFi 5 Linksys E5600 dapat mencakup ruang hingga 1.000 kaki persegi, menangani 10 lebih perangkat, dan kecepatan hingga 1,2 Gbps. Lalu ada teknologi Dual-Band untuk menggandakan bandwidth untuk menghindari gangguan dan memaksimalkan throughput.</p>
-              </div>
-            </div>
-            <div className="bg-white relative h-[300px] md:h-[360px] border border-white rounded-xl">
-              <div className="h-36 md:h-52">
-                <Image src="/assets/images/totolink.png" alt="router xiaomi" layout="responsive" width={100} height={100} className="w-full h-full rounded-xl" />
-              </div>
-              <div className="p-3">
-                <h1 className="font-semibold mb-1">Totolink N300RT</h1>
-                <p className=" text-sm line-clamp-5">Router N300RT dilengkapi dengan antena ganda untuk kestabilan performa saat jaringan digunakan secara bersamaan oleh beberapa perangkat. Menariknya, router ini memungkinkan orang tua untuk mengatur jadwal akses jaringan WiFi di rumah, sehingga penggunaan internet untuk anak-anak dapat dikontrol.</p>
-              </div>
-            </div>
-            <div className="bg-white relative h-[300px] md:h-[360px] border border-white rounded-xl">
-              <div className="h-36 md:h-52">
-                <Image src="/assets/images/prolink.png" alt="router xiaomi" layout="responsive" width={100} height={100} className="w-full h-full rounded-xl" />
-              </div>
-              <div className="p-3">
-                <h1 className="font-semibold mb-1">Prolink PRN3009</h1>
-                <p className=" text-sm line-clamp-5">Prolink PRN3009 adalah salah satu router WiFi yang populer di merek ini. Router yang dijual di angka Rp 200 ribuan ini memiliki antena 7dBi yang diperluas yang memiliki kinerja dan cakupan yang bagus. Kecepatan jaringannya adalah hingga 300 Mbps.</p>
-              </div>
-            </div>
-            <div className="bg-white relative h-[300px] md:h-[360px] border border-white rounded-xl">
-              <div className="h-36 md:h-52">
-                <Image src="/assets/images/tenda.jpg" alt="router xiaomi" layout="responsive" width={100} height={100} className="w-full h-full rounded-xl" />
-              </div>
-              <div className="p-3">
-                <h1 className="font-semibold mb-1">Tenda AC6</h1>
-                <p className=" text-sm line-clamp-5">Dengan harga di kisaran Rp 400 ribuan, router Tenda AC6 memiliki kemampuan 2x menembus dinding daripada router normal dengan amplifier daya yang terpisah, teknologi beamforming+ canggih dan 4x antena 5dBi HG.</p>
-              </div>
-            </div>
-            <div className="bg-white relative h-[300px] md:h-[360px] border border-white rounded-xl">
-              <div className="h-36 md:h-52">
-                <Image src="/assets/images/mercusys.png" alt="router xiaomi" layout="responsive" width={100} height={100} className="w-full h-full rounded-xl" />
-              </div>
-              <div className="p-3">
-                <h1 className="font-semibold mb-1">Mercusys MW305R</h1>
-                <p className=" text-sm line-clamp-5">Mercusys MW305R memiliki tiga antena 5dBi yang mampu meningkatkan kekuatan, ukuran, dan stabilitas sinyal nirkabel. Selain itu, adanya halaman web yang intuitif memudahkan proses penyetelan router ini.</p>
-              </div>
-            </div>
-            <div className="bg-white relative h-[300px] md:h-[360px] border border-white rounded-xl">
-              <div className="h-36 md:h-52">
-                <Image src="/assets/images/dlink.png" alt="router xiaomi" layout="responsive" width={100} height={100} className="w-full h-full rounded-xl" />
-              </div>
-              <div className="p-3">
-                <h1 className="font-semibold mb-1">D-Link DIR-612</h1>
-                <p className=" text-sm line-clamp-5">D-Link DIR-612 menjadi salah satu router terlaris dari merek ini. Router dengan kecepatan hingga 300 Mbps ini memiliki keistimewaan berupa adanya mode repeater yang memungkinkan pengguna untuk memperluas jaringan nirkabel di rumah agar koneksi internet dapat mencapai setiap sudut ruangan dengan kapasitas yang sama besar.</p>
-              </div>
-            </div>
-            <div className="bg-white relative h-[300px] md:h-[360px] border border-white rounded-xl">
-              <div className="h-36 md:h-52">
-                <Image src="/assets/images/xiaomi.png" alt="router xiaomi" layout="responsive" width={100} height={100} className="w-full h-full rounded-xl" />
-              </div>
-              <div className="p-3">
-                <h1 className="font-semibold mb-1">Mi Router 4C</h1>
-                <p className=" text-sm line-clamp-5">Mi Router 4C dibekali dengan empat buah antena eksternal omnidireksional dengan penguatan sinyal 5dBi yang dapat secara efektif meningkatkan efek penguatan sinyal untuk meningkatkan kinerja transmisi, dan dapat digunakan dengan mudah di berbagai lingkungan yang kompleks.</p>
-              </div>
-            </div>
+          <div className="container mx-auto grid justify-center grid-cols-1 gap-4 mt-8 md:grid-cols-3">
+          {/* <div className="container mx-auto flex"> */}
+            <Card
+              title="OLT"
+              description="OLT adalah singkatan dari 'Optical Line Terminal'. Ini adalah perangkat jaringan yang terletak di sisi operator dalam jaringan akses serat optik pasif (PON). Perangkat ini berperan sebagai titik terminasi untuk serat optik dari sisi operator dan mengelola koneksi dengan perangkat pelanggan yang disebut Optical Network Units (ONU) atau Optical Network Terminals (ONT)."
+              imageUrl="/Assets/images/olt.png"
+            />
+            <Card
+              title="ONU"
+              description="ONU adalah singkatan dari 'Optical Network Unit' atau sering juga disebut 'Optical Network Terminal' (ONT). Ini adalah perangkat yang terletak di sisi pelanggan dalam jaringan akses serat optik pasif (PON). ONU berfungsi sebagai antarmuka antara jaringan operator yang menggunakan serat optik dengan perangkat-perangkat di rumah atau kantor pelanggan.
+
+              Router ini dilengkapi dengan AC1200 yang menawarkan konektivitas tangguh dengan kecepatan nirkabel 1.200Mbps dan fungsi Quality of Service (QoS) untuk memastikan pengalaman browsing web yang lancar."
+              imageUrl="/Assets/images/onu.webp"
+            />
+            <Card
+              title="ROUTER"
+              description="
+              Router adalah perangkat jaringan yang digunakan untuk mengirimkan paket data antara jaringan yang berbeda. Ini bekerja dengan menganalisis alamat tujuan paket data dan memutuskan jalur terbaik untuk meneruskannya ke tujuan yang ditentukan. Router dapat beroperasi pada tingkat jaringan (Layer 3) dalam model referensi OSI (Open Systems Interconnection)."
+              imageUrl="/Assets/images/netgear.png"
+            />
           </div>
         </section>
 
-        <section id="supplier" className="container mx-auto p-4 my-8 lg:my-16">
-          <h1 className="text-xl font-semibold md:text-2xl">Our Supplier</h1>
-          <div className="flex flex-wrap items-center justify-center my-4 lg:my-16 text-center gap-x-8 gap-y-4 brand lg:justify-between">
-            <div className="lg:w-48 h-auto">
-              <Image src="/assets/icons/logo-asus.png" alt="Logo Asus" layout="responsive" width={100} height={100}/>
+        <section id="supplier" className="container mx-auto p-4 my-8 lg:my-10 ">
+          <h1 className="text-xl font-semibold md:text-2xl mb-8 md:mb-10">Our Supplier</h1>
+          <Slider {...sliderSettings}>
+            <div className="lg:w-48 h-auto flex justify-center align-middle p-4">
+              <Image src="/Assets/icons/logo-asus.png" alt="Logo Asus" layout="responsive" width={100} height={100}/>
             </div>
-            <div className="lg:w-48 h-auto">
-              <Image src="/assets/icons/logo-netgear.png" alt="Logo Asus" layout="responsive" width={100} height={100} />
+            <div className="lg:w-48 h-auto flex justify-center align-middle p-4">
+              <Image src="/Assets/icons/logo-netgear.png" alt="Logo Asus" layout="responsive" width={100} height={100} />
             </div>
-            <div className="lg:w-48 h-auto">
-            <Image src="/assets/icons/logo-ProLink.png" alt="Logo Asus" layout="responsive" width={100} height={100} />
+            <div className="lg:w-48 h-auto flex justify-center align-middle p-4">
+              <Image src="/Assets/icons/logo-ProLink.png" alt="Logo Asus" layout="responsive" width={100} height={100} />
             </div>
-            <div className="lg:w-48 h-auto">
-            <Image src="/assets/icons/logo-tplink.png" alt="Logo Asus" layout="responsive" width={100} height={100} />
+            <div className="lg:w-48 h-auto flex justify-center align-middle p-4">
+              <Image src="/Assets/icons/logo-tplink.png" alt="Logo Asus" layout="responsive" width={100} height={100} />
             </div>
-            <div className="lg:w-48 h-auto">
-            <Image src="/assets/icons/logo-xiaomi.png" alt="Logo Asus" layout="responsive" width={100} height={100} />
+            <div className="lg:w-48 h-auto flex justify-center align-middle p-4">
+              <Image src="/Assets/icons/logo-xiaomi.png" alt="Logo Asus" layout="responsive" width={100} height={100} />
             </div>
-            <div className="lg:w-48 h-auto">
-            <Image src="/assets/icons/totolink.png" alt="Logo Asus" layout="responsive" width={100} height={100} />
+            <div className="lg:w-48 h-auto flex justify-center align-middle p-4">
+              <Image src="/Assets/icons/totolink.png" alt="Logo Asus" layout="responsive" width={100} height={100} />
             </div>
-          </div>
+          </Slider>
         </section>
 
         <section id="faq" className="bg-white py-20 px-4">
