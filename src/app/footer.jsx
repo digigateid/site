@@ -10,47 +10,40 @@ function obfuscateEmail(email) {
 const Footer = () => {
     const email = 'info@digigate.id';
     const obfuscatedEmail = obfuscateEmail(email);
-    const whatsApp = 'https://wa.me/6281511207866?text=Hallo,%20Saya%20tertarik%20dengan%20product%20anda';
+    const whatsApp = 'https://wa.me/6281511207866?text=Hallo,%20Saya%20tertarik%20dengan%20produk%20Anda';
     const instagram = 'https://www.instagram.com/digigate.id/';
 
     return (
         <footer id="footer" className="bg-white order-last border-t">
             <div className="container mx-auto flex flex-wrap justify-between gap-8 p-4 my-10 lg:my-24 lg:gap-20">
-            {/* <div className="container mx-auto text-center items-center grid grid-cols-1 gap-6 lg:gap-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-4 my-10 lg:my-24"> */}
                 <div className="w-auto md:w-1/3">
                     <Link href="/" className="md:w-[160px]">
                         <Image src="/Assets/icons/Logo-digigate.png" alt="Logo Digigate" width={120} height={40} />
                     </Link>
                     <p className="mt-4 ml-1 text-sm text-gray-700 xl:max-w-md">
-                    Established in 2023, PT. Gerbang Digital Indonesia is a pioneering company committed to providing the latest networking solutions. 
-                    Our flagship product, DigiGate, encompasses various types of networking devices, including open-source networking devices, as well as OLT and ONU devices. 
-                    Choose DigiGate for unmatched quality, durability, and pricing in networking solutions. Join us as we pave the way towards a more connected and prosperous future. 
-                    Strengthen your network with DigiGate.
+                    Didirikan pada tahun 2023, PT. Gerbang Digital Indonesia adalah perusahaan yang berkomitmen untuk menyediakan solusi jaringan terkini.
+                    Produk unggulan kami, DigiGate, mencakup berbagai jenis perangkat jaringan, termasuk perangkat jaringan sumber terbuka, serta perangkat OLT dan ONU. Perkuat jaringan Anda dengan DigiGate.
                     </p>
                 </div>
                 <div className="flex flex-wrap justify-start gap-8 lg:gap-20">
                     <div className="w-auto">
-                            <div className="mb-1 font-semibold font-sans text-black">Information</div>
+                            <div className="mb-1 font-semibold font-sans text-black">Informasi</div>
                             <div className="text-sm text-gray-700">
-                                <Link href="#about" className="py-1.5 block">About Us</Link>
-                                <Link href="#product" className="py-1.5 block">Product</Link>
-                                <Link href="#faq" className="py-1.5 block">FAQ</Link>
-                                {/* <Link href="#" className="py-1.5 block">Catalog</Link> */}
-                                {/* <Link href="#" className="py-1.5 block">My Account</Link> */}
+                                <Link href="#about" className="py-1.5 block">Tentang Kami</Link>
+                                <Link href="#product" className="py-1.5 block">Produk</Link>
+                                <Link href="#faq" className="py-1.5 block">Pertanyaan Umum</Link>
                             </div>
                     </div>
                     <div className="w-auto">
-                        <div className="mb-1 font-semibold font-sans text-black">Customer Services</div>
+                        <div className="mb-1 font-semibold font-sans text-black">Layanan Pelanggan</div>
                         <div className="text-sm text-gray-700">
-                            {/* <Link href="#" className="py-1.5 block">Contact Us</Link> */}
-                            {/* <h2 className="py-1.5 block">+62 000 000 000</h2> */}
                             <h2 className="py-1.5 block">
                                 <Link href={`mailto:${obfuscatedEmail}`}>{email}</Link>
                             </h2>
                         </div>
                     </div>
                     <div className="w-auto">
-                            <div className="mb-1 font-semibold font-sans text-black">Address</div>
+                            <div className="mb-1 font-semibold font-sans text-black">Alamat</div>
                             <div className="text-sm text-gray-700">
                                 <Link href={`mailto:${obfuscatedEmail}`} className="py-1.5 flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="mr-2" width="20" height="20"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>
@@ -73,8 +66,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="border-t text-center py-6">
-                {/* <h2 className="text-black text-sm lg:text-xl font-bold font-sans"><span className="font-emoji text-sky-600">DigiGate</span> Indonesia</h2> */}
-                <p className="container mx-auto text-[10px] md:text-sm text-gray-600">Copyright © 2024 DigiGate All rights reserved.</p>
+                <p className="container mx-auto text-[10px] md:text-sm text-gray-600">Hak Cipta © 2024 DigiGate. Semua hak dilindungi.</p>
             </div>
         </footer>
     );

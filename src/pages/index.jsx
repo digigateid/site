@@ -28,21 +28,155 @@ export default function Home() {
   }, []);
 
 
-  const FAQItem = ({ question, answer }) => {
-      const [isCollapsed, setIsCollapsed] = useState(true);
+  // const FAQItem = ({ question, answer }) => {
+  //     const [isCollapsed, setIsCollapsed] = useState(true);
 
-      const toggleCollapse = () => {
-          setIsCollapsed(!isCollapsed);
-      };
+  //     const toggleCollapse = () => {
+  //         setIsCollapsed(!isCollapsed);
+  //     };
 
-      return (
-          <div className="mb-4">
-              <button
-                  className="flex justify-between items-center text-left bg-white border border-black border-solid font-bold p-2 md:py-2 md:px-4 rounded-md text-xs md:text-sm"
-                  onClick={toggleCollapse}
-              >
-                  <span>{question}</span>
-                  <span className="ml-4">
+  //     return (
+  //         // <div className="mb-4">
+  //         //     <button
+  //         //         className="flex justify-between items-center text-left bg-white border border-black border-solid font-bold p-2 md:py-2 md:px-4 rounded-md text-xs md:text-sm"
+  //         //         onClick={toggleCollapse}
+  //         //     >
+  //         //         <span>{question}</span>
+  //         //         <span className="ml-4">
+  //         //           {isCollapsed ? (
+  //         //               <svg
+  //         //                   xmlns="http://www.w3.org/2000/svg"
+  //         //                   viewBox="0 0 448 512"
+  //         //                   className="w-4 h-4"
+  //         //               >
+  //         //                   <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+  //         //               </svg>
+  //         //           ) : (
+  //         //               <svg
+  //         //                   xmlns="http://www.w3.org/2000/svg"
+  //         //                   viewBox="0 0 448 512"
+  //         //                   className="w-4 h-4"
+  //         //               >
+  //         //                   <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z" />
+  //         //               </svg>
+  //         //           )}
+  //         //       </span>
+  //         //     </button>
+  //         //     <div
+  //         //         className={`bg-gray-200 p-2 md:p-4 rounded w-fit ${isCollapsed ? 'hidden' : 'block'}`}
+  //         //     >
+  //         //         {answer}
+  //         //     </div>
+  //         // </div>
+  //       // <div className="grid grid-cols-2 gap-4">
+  //       <div>
+  //         <div>
+  //           <button
+  //             className="flex justify-between items-center text-left w-full bg-white border border-black border-solid font-bold p-2 md:py-2 md:px-4 rounded-md text-xs md:text-sm"
+  //             onClick={toggleCollapse}
+  //           >
+  //             <span>{question}</span>
+  //             <span className="ml-4">
+  //               {isCollapsed ? (
+  //                 <svg
+  //                   xmlns="http://www.w3.org/2000/svg"
+  //                   viewBox="0 0 448 512"
+  //                   className="w-4 h-4"
+  //                 >
+  //                   <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+  //                 </svg>
+  //               ) : (
+  //                 <svg
+  //                   xmlns="http://www.w3.org/2000/svg"
+  //                   viewBox="0 0 448 512"
+  //                   className="w-4 h-4"
+  //                 >
+  //                   <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z" />
+  //                 </svg>
+  //               )}
+  //             </span>
+  //           </button>
+  //         </div>
+  //         <div>
+  //           <div
+  //             className={`bg-gray-200 p-2 md:p-4 rounded w-fit ${
+  //               isCollapsed ? 'hidden' : 'block'
+  //             }`}
+  //           >
+  //             {answer}
+  //           </div>
+  //         </div>
+  //       </div>
+   
+  //     );
+  // };
+
+  // const FAQ = () => {
+  //     return (
+  //         <div className="grid grid-cols-2 gap-4">
+  //             <FAQItem
+  //                 question="Perangkat apa sih DigiGate Router Series?"
+  //                 answer="DigiGate Router Series adalah perangkat server yang dirancang khusus untuk networking berbasis open-source dengan arsitektur x86. Anda dapat menginstal sistem operasi yang mendukung arsitektur x86 pada perangkat ini."
+  //             />
+  //             <FAQItem
+  //                 question="Dimana saya bisa memesan DigiGate?"
+  //                 answer="Anda dapat memesan perangkat DigiGate melalui platform e-commerce kami atau menghubungi admin kami."
+  //             />
+  //             <FAQItem
+  //                 question="Berapa lama waktu pengiriman setelah saya melakukan pemesanan?"
+  //                 answer="Waktu pengiriman tergantung ketersediaan stock perangkat. Untuk informasi lebih lanjut mengenai estimasi waktu pengiriman, silakan hubungi tim penjualan kami."
+  //             />
+  //             <FAQItem
+  //                 question="Bagaimana cara menginstal sistem operasi pada perangkat ini?"
+  //                 answer="Anda dapat menginstal sistem operasi pada perangkat ini menggunakan media instalasi seperti USB drive atau DVD. Instruksi instalasi biasanya dapat ditemukan dalam panduan pengguna atau dokumentasi yang disertakan dari sistem operasi."
+  //             />
+  //             <FAQItem
+  //                 question="Apabila perangkat saya mengalami kerusakan, berapa lama garansi yang akan berlaku?"
+  //                 answer="Untuk kerusakan yang umum seperti bagian power supply, SFP Port, kipas, dan lain-lain, kami memiliki suku cadang yang tersedia untuk penggantian segera. Anda dapat mengajukan klaim garansi dalam waktu yang singkat."
+  //             />
+  //             <FAQItem
+  //                 question="Bisakah saya meminta instalasi OS dan konfigurasi pada perangkat yang akan saya beli?"
+  //                 answer="Tentu saja, Anda dapat berkonsultasi mengenai biaya konfigurasi dan kompatibilitas dengan kebutuhan layanan yang Anda inginkan."
+  //             />
+  //             <FAQItem
+  //                 question="Saya ingin membeli, tetapi saya ragu perangkat yang saya beli tidak mampu mengatasi jaringan saya. Apa yang bisa saya lakukan?"
+  //                 answer="Jangan khawatir, kami menawarkan garansi refund selama 7 hari apabila perangkat yang disarankan oleh admin kami tidak mampu mengatasi kebutuhan jaringan Anda."
+  //             />
+  //         </div>
+  //     );
+  // };
+
+  const FAQ = () => {
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const toggleCollapse = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
+    return (
+        <div className="grid grid-cols-2 gap-4 md:gap-6">
+            {faqData.map((faq, index) => (
+                <FAQItem
+                    key={index}
+                    question={faq.question}
+                    answer={faq.answer}
+                    isCollapsed={openIndex !== index}
+                    toggleCollapse={() => toggleCollapse(index)}
+                />
+            ))}
+        </div>
+    );
+  };
+
+  const FAQItem = ({ question, answer, isCollapsed, toggleCollapse }) => {
+    return (
+        <div className="grid" style={{ gridRow: 'span 1' }}>
+            <button
+                className="flex justify-between items-center text-left h-fit bg-white border border-slate-200 border-solid shadow-md font-bold p-2 md:py-2 md:px-4 rounded-md text-xs md:text-sm"
+                onClick={toggleCollapse}
+            >
+                <span>{question}</span>
+                <span className="ml-4">
                     {isCollapsed ? (
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -61,50 +195,46 @@ export default function Home() {
                         </svg>
                     )}
                 </span>
-              </button>
-              <div
-                  className={`bg-gray-200 p-2 md:p-4 rounded w-fit ${isCollapsed ? 'hidden' : 'block'}`}
-              >
-                  {answer}
-              </div>
-          </div>
-      );
+            </button>
+            <div
+                className={`bg-white shadow-md p-2 md:p-4 rounded w-fit ${isCollapsed ? 'hidden' : 'block'}`}
+            >
+                {answer}
+            </div>
+        </div>
+    );
   };
 
-  const FAQ = () => {
-      return (
-          <div>
-              <FAQItem
-                  question="Perangkat apa sih DigiGate Router Series?"
-                  answer="DigiGate Router Series adalah perangkat server yang dirancang khusus untuk networking berbasis open-source dengan arsitektur x86. Anda dapat menginstal sistem operasi yang mendukung arsitektur x86 pada perangkat ini."
-              />
-              <FAQItem
-                  question="Saya ingin membeli, tetapi saya ragu perangkat yang saya beli tidak mampu mengatasi jaringan saya. Apa yang bisa saya lakukan?"
-                  answer="Jangan khawatir, kami menawarkan garansi refund selama 7 hari apabila perangkat yang disarankan oleh admin kami tidak mampu mengatasi kebutuhan jaringan Anda."
-              />
-              <FAQItem
-                  question="Apabila perangkat saya mengalami kerusakan, berapa lama garansi yang akan berlaku?"
-                  answer="Untuk kerusakan yang umum seperti bagian power supply, SFP Port, kipas, dan lain-lain, kami memiliki suku cadang yang tersedia untuk penggantian segera. Anda dapat mengajukan klaim garansi dalam waktu yang singkat."
-              />
-              <FAQItem
-                  question="Bisakah saya meminta instalasi OS dan konfigurasi pada perangkat yang akan saya beli?"
-                  answer="Tentu saja, Anda dapat berkonsultasi mengenai biaya konfigurasi dan kompatibilitas dengan kebutuhan layanan yang Anda inginkan."
-              />
-              <FAQItem
-                  question="Dimana saya bisa memesan DigiGate?"
-                  answer="Anda dapat memesan perangkat DigiGate melalui platform e-commerce kami atau menghubungi admin kami."
-              />
-              <FAQItem
-                  question="Berapa lama waktu pengiriman setelah saya melakukan pemesanan?"
-                  answer="Waktu pengiriman tergantung ketersediaan stock perangkat. Untuk informasi lebih lanjut mengenai estimasi waktu pengiriman, silakan hubungi tim penjualan kami."
-              />
-              <FAQItem
-                  question="Bagaimana cara menginstal sistem operasi pada perangkat ini?"
-                  answer="Anda dapat menginstal sistem operasi pada perangkat ini menggunakan media instalasi seperti USB drive atau DVD. Instruksi instalasi biasanya dapat ditemukan dalam panduan pengguna atau dokumentasi yang disertakan dari sistem operasi."
-              />
-          </div>
-      );
-  };
+  const faqData = [
+      {
+          question: "Perangkat apa sih DigiGate Router Series?",
+          answer: "DigiGate Router Series adalah perangkat server yang dirancang khusus untuk networking berbasis open-source dengan arsitektur x86. Anda dapat menginstal sistem operasi yang mendukung arsitektur x86 pada perangkat ini."
+      },
+      {
+          question: "Dimana saya bisa memesan DigiGate?",
+          answer: "Anda dapat memesan perangkat DigiGate melalui platform e-commerce kami atau menghubungi admin kami."
+      },
+      {
+          question: "Berapa lama waktu pengiriman setelah saya melakukan pemesanan?",
+          answer: "Waktu pengiriman tergantung ketersediaan stock perangkat. Untuk informasi lebih lanjut mengenai estimasi waktu pengiriman, silakan hubungi tim penjualan kami."
+      },
+      {
+          question: "Bagaimana cara menginstal sistem operasi pada perangkat ini?",
+          answer: "Anda dapat menginstal sistem operasi pada perangkat ini menggunakan media instalasi seperti USB drive atau DVD. Instruksi instalasi biasanya dapat ditemukan dalam panduan pengguna atau dokumentasi yang disertakan dari sistem operasi."
+      },
+      {
+          question: "Apabila perangkat saya mengalami kerusakan, berapa lama garansi yang akan berlaku?",
+          answer: "Untuk kerusakan yang umum seperti bagian power supply, SFP Port, kipas, dan lain-lain, kami memiliki suku cadang yang tersedia untuk penggantian segera. Anda dapat mengajukan klaim garansi dalam waktu yang singkat."
+      },
+      {
+          question: "Bisakah saya meminta instalasi OS dan konfigurasi pada perangkat yang akan saya beli?",
+          answer: "Tentu saja, Anda dapat berkonsultasi mengenai biaya konfigurasi dan kompatibilitas dengan kebutuhan layanan yang Anda inginkan."
+      },
+      {
+          question: "Saya ingin membeli, tetapi saya ragu perangkat yang saya beli tidak mampu mengatasi jaringan saya. Apa yang bisa saya lakukan?",
+          answer: "Jangan khawatir, kami menawarkan garansi refund selama 7 hari apabila perangkat yang disarankan oleh admin kami tidak mampu mengatasi kebutuhan jaringan Anda."
+      },
+  ];
 
   const sliderSettings = {
     dots: true,
@@ -158,15 +288,15 @@ export default function Home() {
           )}
           <Image src="/Assets/images/banner1.jpeg" alt="hero image" width="1400" height="800" className={`${loaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 object-cover w-full h-[420px] lg-[560px] xl:h-[640px] brightness-[.15] blur-[2px]`} onLoad={handleImageLoaded}/>
           <div className="container mx-auto hero-text absolute inset-0 flex flex-col items-center justify-center text-center text-white p-8">
-            <div className="font-bold text-2xl lg:text-6xl">
-              <h1>We are here to help you</h1>
-              <h1 className="text-sky-600">by providing the best products</h1>
-              <h1>based on your needs.</h1>
-            </div>
-            <div className="font-normal text-[12px] lg:text-xl">
-              <h5 className="mt-2">Since our establishment, we have been focused</h5>
-              <h5>on delivering the best products tailored to your needs.</h5>
-            </div>
+          <div className="font-bold text-lg md:text-xl lg:text-6xl text-center">
+            <h1>Kami hadir untuk membantu Anda<br/>
+            <span className="text-sky-600">dengan menyediakan produk terbaik</span>
+            <br/>berdasarkan kebutuhan Anda.</h1>
+          </div>
+          <div className="font-normal text-[12px] lg:text-xl">
+            <h5 className="mt-2">Sejak berdiri, kami telah fokus</h5>
+            <h5>pada penyediaan produk terbaik yang disesuaikan dengan kebutuhan Anda.</h5>
+          </div>
             <Link href="#about">
               <div className="absolute bottom-10 animate-bounce bg-transparent border border-sky-600 border-solid rounded-2xl mx-auto px-1 py-3">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className="text-sky-600 fill-sky-600 stroke-sky-600" width={20} height={20}><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
@@ -175,15 +305,12 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="about" className=" bg-white py-20">
+        <section id="about" className=" bg-white py-10 md:py-20">
           <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center px-4">
             <div className="mb-4 lg:mb-0 lg:w-1/2 lg:pr-4">
-              <h1 className="text-xl font-bold md:text-3xl my-4"><span className="text-sky-600">DigiGate</span> is here to <br/>give you a solution</h1>
-              <p className="leading-6 md:leading-8 tracking-wide text-sm md:text-base">Established in 2023, PT. Gerbang Digital Indonesia is a pioneering company committed to providing the latest networking solutions. 
-              Our flagship product, DigiGate, encompasses various types of networking devices, including open-source networking devices, as well as OLT and ONU devices. 
-              <span className="font-bold"> Choose DigiGate for unmatched quality, durability, and pricing in networking solutions. </span> 
-              Join us as we pave the way towards a more connected and prosperous future. Strengthen your network with DigiGate.
-              </p>
+            <h1 className="text-xl font-bold md:text-3xl my-4"><span className="text-sky-600">DigiGate</span> hadir untuk <br/>menyediakan solusi bagi Anda</h1>
+            <p className="leading-6 md:leading-8 tracking-wide text-sm md:text-base">Didirikan pada tahun 2023, PT. Gerbang Digital Indonesia adalah perusahaan yang berkomitmen untuk menyediakan solusi jaringan terbaru. Produk andalan kami, DigiGate, mencakup berbagai jenis perangkat jaringan, termasuk perangkat jaringan open-source, serta perangkat OLT dan ONU. <span className="font-bold">Pilih DigiGate untuk kualitas, daya tahan, dan harga yang tak tertandingi dalam solusi jaringan. </span>Bergabunglah dengan kami saat kami membuka jalan menuju masa depan yang lebih terhubung dan makmur. Perkuat jaringan Anda dengan DigiGate.
+            </p>
             </div>
             <div className="lg:w-1/2 flex justify-center">
               <Image src="/Assets/images/animasi1-nbg.png" alt="animasi1" width={400} height={400} />
@@ -191,32 +318,29 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="product" className="container mx-auto py-8 lg:pt-20 px-4">
-          <h1 className="text-xl font-semibold md:text-2xl">Our Product</h1>
+        <section id="product" className="container mx-auto py-10 md:py-20 px-4">
+          <h1 className="text-xl font-semibold md:text-2xl">Produk Kami</h1>
           <div className="container mx-auto grid justify-center grid-cols-1 gap-4 mt-8 md:grid-cols-3">
           {/* <div className="container mx-auto flex"> */}
             <Card
               title="OLT"
-              description="OLT adalah singkatan dari 'Optical Line Terminal'. Ini adalah perangkat jaringan yang terletak di sisi operator dalam jaringan akses serat optik pasif (PON). Perangkat ini berperan sebagai titik terminasi untuk serat optik dari sisi operator dan mengelola koneksi dengan perangkat pelanggan yang disebut Optical Network Units (ONU) atau Optical Network Terminals (ONT)."
+              description="OLT (Optical Line Terminal) adalah perangkat jaringan pada akses serat optik pasif (PON), yang menghubungkan operator dengan perangkat pelanggan seperti ONU atau ONT untuk mengelola koneksi."
               imageUrl="/Assets/images/olt.png"
             />
             <Card
               title="ONU"
-              description="ONU adalah singkatan dari 'Optical Network Unit' atau sering juga disebut 'Optical Network Terminal' (ONT). Ini adalah perangkat yang terletak di sisi pelanggan dalam jaringan akses serat optik pasif (PON). ONU berfungsi sebagai antarmuka antara jaringan operator yang menggunakan serat optik dengan perangkat-perangkat di rumah atau kantor pelanggan.
-
-              Router ini dilengkapi dengan AC1200 yang menawarkan konektivitas tangguh dengan kecepatan nirkabel 1.200Mbps dan fungsi Quality of Service (QoS) untuk memastikan pengalaman browsing web yang lancar."
+              description="ONU (Optical Network Unit) adalah perangkat pada akses serat optik pasif (PON) di sisi pelanggan, menghubungkan jaringan operator dengan perangkat pelanggan. Router dilengkapi AC1200 untuk konektivitas tangguh dan QoS."
               imageUrl="/Assets/images/onu.webp"
             />
             <Card
               title="ROUTER"
-              description="
-              Router adalah perangkat jaringan yang digunakan untuk mengirimkan paket data antara jaringan yang berbeda. Ini bekerja dengan menganalisis alamat tujuan paket data dan memutuskan jalur terbaik untuk meneruskannya ke tujuan yang ditentukan. Router dapat beroperasi pada tingkat jaringan (Layer 3) dalam model referensi OSI (Open Systems Interconnection)."
+              description="Router adalah perangkat jaringan untuk mengirimkan paket data antar jaringan dengan menganalisis alamat tujuan dan memilih jalur terbaik, beroperasi pada tingkat jaringan (Layer 3) dalam model OSI."
               imageUrl="/Assets/images/netgear.png"
             />
           </div>
         </section>
 
-        <section id="supplier" className="container mx-auto p-4 my-8 lg:my-10 ">
+        {/* <section id="supplier" className="container mx-auto p-4 my-8 lg:my-10 ">
           <h1 className="text-xl font-semibold md:text-2xl mb-8 md:mb-10">Our Supplier</h1>
           <Slider {...sliderSettings}>
             <div className="lg:w-48 h-auto flex justify-center align-middle p-4">
@@ -238,11 +362,11 @@ export default function Home() {
               <Image src="/Assets/icons/totolink.png" alt="Logo Asus" layout="responsive" width={100} height={100} />
             </div>
           </Slider>
-        </section>
+        </section> */}
 
-        <section id="faq" className="bg-white py-20 px-4">
+        <section id="faq" className="bg-white py-10 md:py-20 px-4">
           <div className="container mx-auto">
-            <h1 className="text-xl font-semibold md:text-2xl mb-4">FAQ</h1>
+            <h1 className="text-xl font-semibold md:text-2xl mb-4">Pertanyaan Umum</h1>
             <FAQ/>
           </div>
         </section>

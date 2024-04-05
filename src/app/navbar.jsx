@@ -21,11 +21,11 @@ const Navbar = () => {
                 </div>
                 <div className={`items-center gap-6 text-sm text-gray-800 hidden lg:flex lg:px-4`}>
                     <ul className="flex">
-                        <li className="mr-6"><Link href="/" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Home</Link></li>
-                        <li className="mr-6"><Link href="#about" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">About Us</Link></li>
-                        <li className="mr-6"><Link href="#product" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Product</Link></li>
-                        <li className="mr-6"><Link href="#" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Catalog</Link></li>
-                        <li className="mr-6"><Link href="#footer" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Contact</Link></li>
+                        <li className="mr-6"><Link href="/" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Beranda</Link></li>
+                        <li className="mr-6"><Link href="#about" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Tentang Kami</Link></li>
+                        <li className="mr-6"><Link href="#product" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Produk</Link></li>
+                        <li className="mr-6"><Link href="#" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Katalog</Link></li>
+                        <li className="mr-6"><Link href="#footer" className="hover:text-gray-400 hover:border-b-2 pb-2 hover:border-sky-400">Kontak</Link></li>
                     </ul>
                 </div>
                 {/* Sidebar */}
@@ -42,11 +42,11 @@ const Navbar = () => {
                             </button>
                         </div>
                         <ul className="pt-4 pl-6">
-                            <li className="mb-6"><Link href="/" className="text-gray-900 hover:text-gray-400">Home</Link></li>
-                            <li className="mb-6"><Link href="#about" className="text-gray-900 hover:text-gray-400">About Us</Link></li>
-                            <li className="mb-6"><Link href="#product" className="text-gray-900 hover:text-gray-400">Product</Link></li>
-                            <li className="mb-6"><Link href="#" className="text-gray-900 hover:text-gray-400">Catalog</Link></li>
-                            <li className="mb-6"><Link href="#footer" className="text-gray-900 hover:text-gray-400">Contact</Link></li>
+                            <li className="mb-6"><Link href="/" className="text-gray-900 hover:text-gray-400">Beranda</Link></li>
+                            <li className="mb-6"><Link href="#about" className="text-gray-900 hover:text-gray-400">Tentang Kami</Link></li>
+                            <li className="mb-6"><Link href="#product" className="text-gray-900 hover:text-gray-400">Produk</Link></li>
+                            <li className="mb-6"><Link href="#" className="text-gray-900 hover:text-gray-400">Katalog</Link></li>
+                            <li className="mb-6"><Link href="#footer" className="text-gray-900 hover:text-gray-400">Kontak</Link></li>
                         </ul>
                     </div>
                 )}
@@ -66,7 +66,7 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
                     </Link> */}
                     <Link href="#">
-                        <button className="bg-sky-400 text-white flex text-center justify-center items-center gap-2 py-2 px-4 rounded-full border border-sky-400 hover:bg-white hover:text-sky-400 hover:fill-sky-400">
+                        <button className="bg-sky-400 text-white flex text-sm md:text-base text-center justify-center items-center gap-2 py-1 md:py-2 px-2 md:px-4 rounded-full border border-sky-400 hover:bg-white hover:text-sky-400 hover:fill-sky-400">
                             Catalog
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" className="fill-current" width="15" height="15"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
                         </button>
